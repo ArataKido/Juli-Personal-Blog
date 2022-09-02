@@ -67,7 +67,7 @@
 				<div class="col-lg-8 col-md-12">
 					<div class="blog-posts">
 						
-						{% for post in posts|slice:":2" %}
+						{% for post in posts %}
 						<div class="single-post">
 							<div class="image-wrapper"><img src="{{ post.image }}"  alt="Blog Image"></div>
 
@@ -81,37 +81,14 @@
 									<li><a href="#"><i class="ion-android-textsms"></i>06</a></li>
 								</ul>
 							</div>
-							<p class="date"><em>{{ post.date_created }}</em></p>
+							<p class="date"><em>{{ post.date_created|date}}</em></p>
 							<h3 class="title"><a href="#"><b class="light-color">{{ post.title }}</b></a></h3>
 							<p>{{ post.description }}</p>
 							<a class="btn read-more-btn" href="#"><b>READ MORE</b></a>
 						</div><!-- single-post -->
 						{% endfor %}
 
-						<div class="row">
-
-							{% for post in posts|slice:"2:" %}
-							<div class="single-post">
-								<div class="image-wrapper"><img src="../../static/images/blog-3-500x400.jpg"  alt="Blog Image"></div>
-
-								<div class="icons">
-									<div class="left-area">
-										<a class="btn caegory-btn" href="#"><b>{{ post.category }}</b></a>
-									</div>
-									<ul class="right-area social-icons">
-										<li><a href="#"><i class="ion-android-share-alt"></i>Share</a></li>
-										<li><a href="#"><i class="ion-android-favorite-outline"></i>03</a></li>
-										<li><a href="#"><i class="ion-android-textsms"></i>06</a></li>
-									</ul>
-								</div>
-								<p class="date"><em>{{ post.date_created }}</em></p>
-								<h3 class="title"><a href="#"><b class="light-color">{{ post.title }}</b></a></h3>
-								<p>{{ post.description }}</p>
-								<a class="btn read-more-btn" href="#"><b>READ MORE</b></a>
-							</div><!-- single-post -->
-							{% endfor %}
-
-						</div><!-- row -->
+						
 
 						<a class="btn load-more-btn" target="_blank" href="#">LOAD OLDER POSTS</a>
 
